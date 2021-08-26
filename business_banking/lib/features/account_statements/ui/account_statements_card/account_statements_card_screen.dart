@@ -1,5 +1,5 @@
-import 'package:business_banking/features/account_statements/model/account_statements_card/account_statements_entity.dart';
-import 'package:business_banking/features/account_statements/model/account_statements_card/account_statements_view_model.dart';
+import 'package:business_banking/features/account_statements/model/account_statements_card/account_statements_card_entity.dart';
+import 'package:business_banking/features/account_statements/model/account_statements_card/account_statements_card_view_model.dart';
 import 'package:business_banking/features/account_statements/model/service_status.dart';
 import 'package:business_banking/features/account_statements/ui/account_statements_card/account_statements_card_presenter.dart';
 import 'package:clean_framework/clean_framework.dart';
@@ -25,7 +25,7 @@ class _CardTitle extends StatelessWidget {
 }
 
 class AccountStatementsCardScreen extends Screen {
-  final AccountStatementsViewModel viewModel;
+  final AccountStatementsCardViewModel viewModel;
   final AccountStatementsCardPresenterActions actions;
 
   AccountStatementsCardScreen({required this.viewModel, required this.actions});
@@ -45,7 +45,7 @@ class AccountStatementsCardScreen extends Screen {
 }
 
 class _succeedCard extends StatelessWidget {
-  final AccountStatementsViewModel viewModel;
+  final AccountStatementsCardViewModel viewModel;
   final AccountStatementsCardPresenterActions actions;
 
   const _succeedCard({
@@ -64,7 +64,7 @@ class _succeedCard extends StatelessWidget {
 }
 
 class AccountStatementsInfoCard extends StatelessWidget {
-  final AccountStatementsViewModel viewModel;
+  final AccountStatementsCardViewModel viewModel;
 
   const AccountStatementsInfoCard({
     Key? key,
@@ -161,7 +161,7 @@ class AccountStatementsInfoCard extends StatelessWidget {
   String _obfuscateAccountNumber(String accountNumber) {
     var number = '';
     if (viewModel.accountInfo.accountNumber !=
-        AccountStatementsEntity.kAccountNumberDefault) {
+        AccountStatementsCardEntity.kAccountNumberDefault) {
       number = viewModel.accountInfo.accountNumber.substring(
         viewModel.accountInfo.accountNumber.length - 4,
       );

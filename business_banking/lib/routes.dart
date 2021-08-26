@@ -1,3 +1,4 @@
+import 'package:business_banking/features/account_statements/ui/account_statements/account_statements_widget.dart';
 import 'package:business_banking/features/budget/ui/chart/view_chart_widget.dart';
 import 'package:business_banking/features/credit_card/ui/credit_card_details/credit_card_details_widget.dart';
 import 'package:business_banking/features/hub/ui/hub_screen.dart';
@@ -65,7 +66,7 @@ abstract class BusinessBankingRouter {
         return NewOnlineRegistrationRequestSuccessWidget();
 
       case accountStatementsScreen:
-        return NewOnlineRegistrationRequestSuccessWidget();
+        return AccountStatementsWidget();
       default:
         return const PageNotFound();
     }

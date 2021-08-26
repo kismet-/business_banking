@@ -2,7 +2,7 @@ import 'package:business_banking/features/account_statements/api/account_stateme
 import 'package:business_banking/features/account_statements/model/account_info.dart';
 import 'package:clean_framework/clean_framework.dart';
 
-class AccountStatementsEntity extends Entity {
+class AccountStatementsCardEntity extends Entity {
   final AccountInfo accountInfo;
 
   static const kErrorsDefault = <EntityFailure>[];
@@ -11,7 +11,7 @@ class AccountStatementsEntity extends Entity {
   static const kBalanceDefault =
       AccountStatementsGetServiceResponseModel.kBalanceDefault;
 
-  AccountStatementsEntity({
+  AccountStatementsCardEntity({
     List<EntityFailure> errors = kErrorsDefault,
     AccountInfo? accountInfo,
   })  : accountInfo = accountInfo ??
@@ -21,11 +21,11 @@ class AccountStatementsEntity extends Entity {
             ),
         super(errors: errors);
 
-  AccountStatementsEntity merge({
+  AccountStatementsCardEntity merge({
     List<EntityFailure>? errors,
     AccountInfo? accountInfo,
   }) {
-    return AccountStatementsEntity(
+    return AccountStatementsCardEntity(
       errors: errors ?? this.errors,
       accountInfo: accountInfo ?? this.accountInfo,
     );
